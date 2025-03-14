@@ -1,0 +1,188 @@
+/* Main container with background image */
+.website-container {
+    font-family: 'Arial', sans-serif;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1200px;
+    background-image: url('YOUR_THEME_IMAGE_URL'); /* Background theme picture */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #0c0101; /* White text by default */
+    min-height: 100vh; /* Make the background image cover the entire screen */
+}
+
+/* Welcome message */
+.welcome-message {
+    text-align: center;
+    color: black; /* Black for the welcome message */
+    font-size: 36px;
+    font-weight: 600;
+    margin-top: 50px;
+    text-transform: uppercase;
+}
+
+/* Buttons section */
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.custom-button {
+    font-size: 18px;
+    font-weight: 600;
+    padding: 15px 30px;
+    margin: 0 15px;
+    background-color: #e50000; /* Red background for buttons */
+    color: white;
+    border-radius: 25px;
+    border: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    cursor: pointer;
+}
+
+.custom-button:hover {
+    background-color: #cc0000; /* Darker red when hovered */
+    transform: scale(1.05); /* Subtle zoom effect */
+}
+
+/* Form container with shadow */
+.form-container {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 30px;
+    background-color: rgba(247, 243, 243, 0.85); /* Slightly transparent white for elegance */
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px); /* Slight blur effect behind form */
+}
+
+.input-field {
+    margin-bottom: 25px;
+    padding: 10px;
+    font-size: 16px;
+    width: 100%;
+    border: 1px solid #1e0404;
+    border-radius: 8px;
+}
+
+.submit-button {
+    width: 100%;
+    font-size: 18px;
+    padding: 15px;
+    background-color: #e50000; /* Red for submit button */
+    color: rgb(245, 242, 242);
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-button:hover {
+    background-color: #cc0000; /* Darker red when hovered */
+    transform: scale(1.05); /* Subtle zoom effect */
+}
+
+/* Success message styling */
+.success-message {
+    text-align: center;
+    font-size: 18px;
+    color: green;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+/* Next button container */
+.next-button-container {
+    text-align: center;
+    margin-top: 30px;
+}
+
+.next-button {
+    width: 250px;
+    font-size: 18px;
+    font-weight: 600;
+    background-color: #0052cc; /* Blue color for Next button */
+    color: white;
+    padding: 15px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.next-button:hover {
+    background-color: #003d99; /* Darker blue on hover */
+    transform: scale(1.05); /* Subtle zoom effect */
+}
+
+/* Sections for programs and certificates */
+.programs-section, .certificates-section {
+    padding: 30px;
+    background-color: rgba(255, 255, 255, 0.9); /* White with some transparency */
+    margin-top: 30px;
+    border-radius: 15px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+}
+
+.group-container {
+    margin-bottom: 30px;
+}
+
+.group-container h3 {
+    font-size: 1.5rem;
+    color: #000000; /* Black for group headers */
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* List styling */
+.program-list, .cert-list {
+    list-style: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.program-item, .cert-item {
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: 1px solid #ddd;
+}
+
+.program-item:hover, .cert-item:hover {
+    background-color: #f0f0f0; /* Slight grey on hover */
+    transform: scale(1.02); /* Subtle zoom effect on hover */
+}
+
+.program-item span, .cert-item span {
+    font-weight: 600;
+    color: #000000; /* Black for the text inside the list items */
+}
+
+.certificates-section {
+    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent white */
+}
+
+.group-container h3 {
+    color: #000000; /* Black for certificate section headers */
+}
+
+/* Add a more interactive feel to the list */
+.program-item, .cert-item {
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.program-item:hover, .cert-item:hover {
+    background-color: #f1f1f1;
+    transform: scale(1.03);
+}

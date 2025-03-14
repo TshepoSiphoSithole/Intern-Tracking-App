@@ -1,0 +1,37 @@
+<template>
+    <lightning-card title="Intern Tracking Dashboard" icon-name="standard:dashboard">
+        <div class="slds-p-around_medium">
+            <lightning-layout multiple-rows>
+                
+                <!-- Total Interns -->
+                <lightning-layout-item size="12" padding="around-small">
+                    <div class="dashboard-box">
+                        <h2>Total Interns</h2>
+                        <p>{totalInterns}</p>
+                    </div>
+                </lightning-layout-item>
+
+                <!-- Interns Per Program -->
+                <lightning-layout-item size="12" padding="around-small">
+                    <div class="dashboard-box">
+                        <h2>Interns Per Training Program</h2>
+                        <template for:each={internsPerProgram} for:item="program">
+                            <p key={program.Id}>{program.Training_Programs__c}: {program.totalInterns}</p>
+                        </template>
+                    </div>
+                </lightning-layout-item>
+
+                <!-- Consultants Per Project -->
+                <lightning-layout-item size="12" padding="around-small">
+                    <div class="dashboard-box">
+                        <h2>Consultants Per Project</h2>
+                        <template for:each={consultantsPerProject} for:item="project">
+                            <p key={project.Id}>{project.Project__c}: {project.totalConsultants}</p>
+                        </template>
+                    </div>
+                </lightning-layout-item>
+
+            </lightning-layout>
+        </div>
+    </lightning-card>
+</template>

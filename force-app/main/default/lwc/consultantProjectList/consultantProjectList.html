@@ -1,0 +1,22 @@
+<template>
+    <lightning-card title="Assigned Consultants" icon-name="standard:people">
+        <template if:true={error}>
+            <p class="slds-text-color_error">Error loading consultants.</p>
+        </template>
+
+        <template if:true={assignedConsultants}>
+            <template if:false={assignedConsultants.length}>
+                <p>No consultants assigned to this project.</p>
+            </template>
+            
+            <div class="consultant-list">
+                <template for:each={assignedConsultants} for:item="consultant">
+                    <div key={consultant.Id} class="consultant-item">
+                        <p>{consultant.Name}</p>
+                        <hr class="separator"/>
+                    </div>
+                </template>
+            </div>
+        </template>
+    </lightning-card>
+</template>

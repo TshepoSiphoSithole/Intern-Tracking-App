@@ -1,0 +1,11 @@
+<template>
+    <lightning-card title="Assigned Interns">
+        <lightning-datatable 
+            key-field="Id" 
+            data={interns} 
+            columns={columns} 
+            hide-checkbox-column 
+            onrowaction={handleRowAction}>
+        </lightning-datatable>
+    </lightning-card>
+</template>

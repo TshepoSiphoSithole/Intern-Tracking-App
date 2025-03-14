@@ -1,0 +1,15 @@
+<template>
+    <lightning-card title="Assigned Intern" icon-name="standard:user">
+        <template if:true={intern}>
+            <p class="slds-p-horizontal_medium">
+                <strong>Intern Name:</strong> {intern.Name}
+            </p>
+        </template>
+        <template if:false={intern}>
+            <p class="slds-p-horizontal_medium">No intern assigned to this training program.</p>
+        </template>
+        <template if:true={error}>
+            <p class="slds-text-color_error slds-p-horizontal_medium">Error: {error}</p>
+        </template>
+    </lightning-card>
+</template>

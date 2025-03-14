@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Assigned Projects">
+        <div class="slds-m-around_medium">
+            <lightning-button label="Assign Project" onclick={handleAssignProject} variant="brand"></lightning-button>
+        </div>
+
+        <template if:true={projects.length}>
+            <lightning-datatable
+                key-field="Id"
+                data={projects}
+                columns={columns}
+                hide-checkbox-column="true"
+                onrowaction={handleRowAction}>
+            </lightning-datatable>
+        </template>
+
+        <template if:false={projects.length}>
+            <p class="slds-text-align_center slds-m-around_medium">No assigned projects.</p>
+        </template>
+    </lightning-card>
+</template>

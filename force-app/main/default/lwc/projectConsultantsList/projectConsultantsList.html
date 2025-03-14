@@ -1,0 +1,19 @@
+<template>
+    <lightning-card title="Assigned Consultants">
+        <div class="slds-p-horizontal_small">
+            <lightning-button label="Assign Consultant" onclick={handleAssignConsultant} variant="brand"></lightning-button>
+        </div>
+        <template if:true={consultants.length}>
+            <lightning-datatable
+                key-field="Id"
+                data={consultants}
+                columns={columns}
+                hide-checkbox-column="true"
+                onrowaction={handleRowAction}>
+            </lightning-datatable>
+        </template>
+        <template if:false={consultants.length}>
+            <p class="slds-text-align_center slds-m-around_medium">No assigned consultants.</p>
+        </template>
+    </lightning-card>
+</template>

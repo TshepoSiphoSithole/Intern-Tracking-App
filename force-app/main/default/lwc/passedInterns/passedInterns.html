@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="Interns Who Passed" icon-name="standard:user">
+        <template if:true={interns}>
+            <lightning-datatable 
+                key-field="id"
+                data={interns} 
+                columns={columns}
+                onrowaction={handleRowAction}>
+            </lightning-datatable>
+        </template>
+        <template if:true={error}>
+            <p class="slds-text-color_error">Error: {error}</p>
+        </template>
+        <template if:false={interns}>
+            <p class="slds-p-horizontal_medium">No interns have passed this certification.</p>
+        </template>
+    </lightning-card>
+</template>

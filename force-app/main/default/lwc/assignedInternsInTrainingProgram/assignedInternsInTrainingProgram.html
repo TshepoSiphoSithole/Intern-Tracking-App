@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Assigned Interns" icon-name="standard:contact">
+        <!-- Display Interns -->
+        <template if:true={interns}>
+            <lightning-datatable
+                data={interns}
+                columns={columns}
+                key-field="id">
+            </lightning-datatable>
+        </template>
+
+        <!-- Display Error -->
+        <template if:true={error}>
+            <div class="slds-text-color_error">Error: {error}</div>
+        </template>
+    </lightning-card>
+</template>

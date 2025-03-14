@@ -1,0 +1,29 @@
+<template>
+    <lightning-card title="Upload Documents" icon-name="custom:custom19">
+        <div class="slds-p-around_medium">
+            <template for:each={documents} for:item="doc">
+                <div key={doc.label} class="slds-m-bottom_small">
+                    <lightning-input type="file" 
+                        label={doc.label} 
+                        onchange={handleFileChange} 
+                        data-doc-type={doc.type}>
+                    </lightning-input>
+                    
+                    <template if:true={doc.uploaded}>
+                        <lightning-icon icon-name="utility:check" 
+                            alternative-text="Uploaded" 
+                            size="small" 
+                            class="uploaded-icon">
+                        </lightning-icon>
+                    </template>
+                </div>
+            </template>
+
+            <lightning-button 
+                label="Upload Files" 
+                variant="brand" 
+                onclick={handleUpload}>
+            </lightning-button>
+        </div>
+    </lightning-card>
+</template>

@@ -1,0 +1,34 @@
+/* Centering the list and reducing left margin */
+.slds-card__header {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+/* The consultant list with a bit of padding */
+.consultant-list {
+    padding: 1rem;
+    margin: 0;
+}
+
+/* Adjusting consultant item layout and adding margin between items */
+.consultant-item {
+    display: flex;
+    flex-direction: column;
+    padding: 8px 0;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 4px; /* Reduced margin for closeness */
+}
+
+/* Modifying the separator to appear more consistent */
+.separator {
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin-top: 4px; /* Reduced top margin */
+    margin-bottom: 4px; /* Reduced bottom margin */
+}
+
+/* Add some slight spacing between the name and separator */
+.consultant-item p {
+    margin: 0;
+    padding-bottom: 4px; /* Reduced padding */
+}

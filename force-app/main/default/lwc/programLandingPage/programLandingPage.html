@@ -1,0 +1,37 @@
+<template>
+    <lightning-card title="Training Programs" icon-name="custom:custom63">
+        
+        <!-- Display Existing Training Programs -->
+        <template if:true={trainingPrograms}>
+            <ul class="program-list">
+                <template for:each={trainingPrograms} for:item="program">
+                    <li key={program.Id}>
+                        <p>{program.Name} ({program.Start_date__c} - {program.Completion_Date__c})</p>
+                    </li>
+                </template>
+            </ul>
+        </template>
+
+        <!-- Create Training Program Form -->
+        <div class="form-section">
+            <lightning-input label="Program Name" value={programName} onchange={handleProgramChange}></lightning-input>
+            <lightning-input type="date" label="Start Date" value={startDate} onchange={handleStartDateChange}></lightning-input>
+            <lightning-input type="date" label="Completion Date" value={completionDate} onchange={handleCompletionDateChange}></lightning-input>
+            <lightning-button variant="brand" label="Create Program" onclick={createProgram}></lightning-button>
+        </div>
+
+        <lightning-card title="Add Intern to a Program" icon-name="custom:custom101">
+            <lightning-combobox 
+                label="Select Program" 
+                options={programOptions} 
+                value={selectedProgramId} 
+                onchange={handleProgramSelection}>
+            </lightning-combobox>
+            
+            <lightning-input label="Intern Name" value={internName} onchange={handleInternChange}></lightning-input>
+            <lightning-input type="email" label="Email" value={internEmail} onchange={handleInternEmailChange}></lightning-input>
+            <lightning-button variant="success" label="Create Intern" onclick={createIntern}></lightning-button>
+        </lightning-card>
+
+    </lightning-card>
+</template>

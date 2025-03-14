@@ -1,0 +1,72 @@
+<template>
+    <div class="website-container">
+        <h1 class="welcome-message">Welcome to Quarphix Intern Tracking App</h1>
+
+        <!-- Action Buttons -->
+        <div class="action-buttons">
+            <button class="custom-button btn primary" onclick={handleCreateProgram}>Create Program</button>
+            <button class="custom-button btn secondary" onclick={togglePrograms}>Available Training Programs</button>
+            <button class="custom-button btn secondary" onclick={toggleCertificates}>Available Certificates</button>
+        </div>
+
+        <!-- Training Program Form -->
+        <template if:true={showForm}>
+            <div class="form-container">
+                <h2>Create Training Program</h2>
+                <div class="input-field">
+                    <label>Program Name:</label>
+                    <input type="text" name="programName" onchange={handleChange} />
+                </div>
+                <div class="input-field">
+                    <label>Start Date:</label>
+                    <input type="date" name="startDate" onchange={handleChange} />
+                </div>
+                <button class="custom-button submit-button" onclick={handleSubmit}>Submit Program</button>
+            </div>
+        </template>
+
+        <!-- Success Message -->
+        <template if:true={successMessage}>
+            <p class="success-message">{successMessage}</p>
+        </template>
+
+        <!-- Next Button -->
+        <template if:true={showNextButton}>
+            <button class="custom-button submit-button" onclick={handleNext}>Next</button>
+        </template>
+
+        <!-- Available Training Programs -->
+        <template if:true={showPrograms}>
+            <div class="programs-section">
+                <h2>Available Training Programs</h2>
+                <ul class="program-list">
+                    <template for:each={trainingPrograms} for:item="program">
+                        <li key={program.Id} class="program-item">
+                            <span>{program.Name}</span>
+                        </li>
+                    </template>
+                </ul>
+            </div>
+        </template>
+
+        <!-- Available Certificates -->
+        <template if:true={showCertificates}>
+            <div class="certificates-section">
+                <h2>Available Certificates</h2>
+                <template for:each={formattedCertifications} for:item="cert">
+                    <div key={cert.name} class="group-container">
+                        <h3>{cert.name}</h3>
+                        <ul class="cert-list">
+                            <template for:each={cert.interns} for:item="intern">
+                                <li key={intern.Id} class="cert-item">
+                                    <span>{intern.Name}</span>
+                                </li>
+                            </template>
+                        </ul>
+                    </div>
+                </template>
+            </div>
+        </template>
+    </div>
+</template>
+
